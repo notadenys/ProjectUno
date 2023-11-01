@@ -1,4 +1,4 @@
-package cartes;
+package uno.cartes;
 
 public class FabriqueCartes {
     private static FabriqueCartes instance = new FabriqueCartes();

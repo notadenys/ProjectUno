@@ -1,4 +1,4 @@
-package cartes;
+package uno.cartes;
 
 import java.util.ArrayList;
 import java.util.Random;

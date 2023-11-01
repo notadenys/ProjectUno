@@ -1,7 +1,7 @@
-package cartes.tests;
+package uno.cartes.tests;
 
-import cartes.FabriqueCartes;
-import cartes.PaquetDeCartes;
+import uno.cartes.FabriqueCartes;
+import uno.cartes.PaquetDeCartes;
 
 public class TestPaquet {
     public static void main(String[] args)
