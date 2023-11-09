@@ -1,5 +1,7 @@
 package uno.cartes;
 
+import uno.jeu.Uno;
+
 public class FabriqueCartes {
     private static FabriqueCartes instance = new FabriqueCartes();
 
@@ -7,26 +9,31 @@ public class FabriqueCartes {
 
     private FabriqueCartes(){}
 
-    public PaquetDeCartes getPaquet1Vert()
+    public PaquetDeCartes getPaquetUno()
     {
         PaquetDeCartes pdc = new PaquetDeCartes();
-        Carte carte = new Carte(5, Couleur.VERT);
-        pdc.ajouter(carte);
-        return pdc;
-    }
-
-    public PaquetDeCartes getPaquet32()
-    {
-        PaquetDeCartes pdc = new PaquetDeCartes();
-        Carte carte = new Carte(5, Couleur.VERT);
-        for (int i = 0; i < 28; i++)
+        Uno uno = new Uno();
+        for (Couleur col : Couleur.values())
         {
-            pdc.ajouter(carte);
+            pdc.ajouter(new Chiffre(uno, 0, col));
+            for (int i = 1; i < 10; i++)
+            {
+                pdc.ajouter(new Chiffre(uno, i, col));
+                pdc.ajouter(new Chiffre(uno, i, col));
+            }
+
+            pdc.ajouter(new Plus2(uno, col));
+            pdc.ajouter(new Plus2(uno, col));
+
+            pdc.ajouter(new PasseTonTour(uno, col));
+            pdc.ajouter(new PasseTonTour(uno, col));
+
+            pdc.ajouter(new ChangementDeSens(uno, col));
+            pdc.ajouter(new ChangementDeSens(uno, col));
+
+            pdc.ajouter(new Plus4(uno));
+            pdc.ajouter(new Joker(uno));
         }
-        pdc.ajouter(new Carte(4, Couleur.JAUNE));
-        pdc.ajouter(new Carte(3, Couleur.BLEU));
-        pdc.ajouter(new Carte(2, Couleur.ROUGE));
-        pdc.ajouter(new Carte(1, Couleur.JAUNE));
         return pdc;
     }
 }
