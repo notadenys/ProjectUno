@@ -2,15 +2,10 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
-public class Chiffre extends Carte{
-    public Chiffre(Uno uno, int valeur, Couleur couleur)
+public abstract class CarteAction extends Carte {
+    public CarteAction(Uno uno, Couleur couleur)
     {
-        super(uno, valeur, couleur);
-    }
-
-
-    public String getNom() {
-        return "Chiffre";
+        super(uno, 20, couleur);
     }
 
     public boolean peutEtreRecouvertePar(Carte c) {
@@ -18,7 +13,11 @@ public class Chiffre extends Carte{
     }
 
     public boolean peutEtrePoseeSur(Chiffre c) {
-        return this.getValeur() == c.getValeur() || this.getCouleur() == c.getCouleur();
+        return this.getCouleur() == c.getCouleur();
+    }
+
+    public boolean peutEtrePoseeSur(PasseTonTour c) {
+        return this.getCouleur() == c.getCouleur();
     }
 
     public boolean peutEtrePoseeSur(Plus2 c) {
@@ -30,10 +29,6 @@ public class Chiffre extends Carte{
     }
 
     public boolean peutEtrePoseeSur(Joker c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(PasseTonTour c) {
         return this.getCouleur() == c.getCouleur();
     }
 

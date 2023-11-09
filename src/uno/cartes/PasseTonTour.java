@@ -2,38 +2,13 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
-public class PasseTonTour extends Carte {
+public class PasseTonTour extends CarteAction {
     public PasseTonTour(Uno uno, Couleur couleur)
     {
-        super(uno, 20, couleur);
+        super(uno, couleur);
     }
 
-
-    public boolean peutEtreRecouvertePar(Carte c) {
-        return false;
-    }
-
-    public boolean peutEtrePoseeSur(Chiffre c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(PasseTonTour c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Plus2 c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Plus4 c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Joker c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(ChangementDeSens c) {
-        return this.getCouleur() == c.getCouleur();
+    public String getNom() {
+        return "Passe Ton Tour";
     }
 }

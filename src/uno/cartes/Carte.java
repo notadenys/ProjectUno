@@ -37,7 +37,7 @@ public abstract class Carte {
     }
 
     public String toString() {
-        return "Carte{" +
+        return getNom()+" {" +
                 "valeur=" + valeur +
                 ", couleur=" + couleur +
                 '}';
@@ -51,6 +51,7 @@ public abstract class Carte {
         return c.couleur == couleur;
     }
 
+    public abstract String getNom();
     public abstract boolean peutEtreRecouvertePar(Carte c);
     public abstract boolean peutEtrePoseeSur(Chiffre c);
     public abstract boolean peutEtrePoseeSur(Plus2 c);
