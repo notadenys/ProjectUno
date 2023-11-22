@@ -21,23 +21,11 @@ public class Chiffre extends Carte{
         return this.getValeur() == c.getValeur() || this.getCouleur() == c.getCouleur();
     }
 
-    public boolean peutEtrePoseeSur(Plus2 c) {
+    public boolean peutEtrePoseeSur(CarteSpeciale c) {
         return this.getCouleur() == c.getCouleur();
     }
 
-    public boolean peutEtrePoseeSur(Plus4 c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Joker c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(PasseTonTour c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(ChangementDeSens c) {
+    public boolean peutEtrePoseeSur(CarteAction c) {
         return this.getCouleur() == c.getCouleur();
     }
 }

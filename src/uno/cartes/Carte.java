@@ -54,9 +54,6 @@ public abstract class Carte {
     public abstract String getNom();
     public abstract boolean peutEtreRecouvertePar(Carte c);
     public abstract boolean peutEtrePoseeSur(Chiffre c);
-    public abstract boolean peutEtrePoseeSur(Plus2 c);
-    public abstract boolean peutEtrePoseeSur(Plus4 c);
-    public abstract boolean peutEtrePoseeSur(Joker c);
-    public abstract boolean peutEtrePoseeSur(PasseTonTour c);
-    public abstract boolean peutEtrePoseeSur(ChangementDeSens c);
+    public abstract boolean peutEtrePoseeSur(CarteAction c);
+    public abstract boolean peutEtrePoseeSur(CarteSpeciale c);
 }

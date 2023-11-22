@@ -2,6 +2,7 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
+/**PasseTonTour, Plus2, ChangementDeSens*/
 public abstract class CarteAction extends Carte {
     public CarteAction(Uno uno, Couleur couleur)
     {
@@ -16,23 +17,11 @@ public abstract class CarteAction extends Carte {
         return this.getCouleur() == c.getCouleur();
     }
 
-    public boolean peutEtrePoseeSur(PasseTonTour c) {
+    public boolean peutEtrePoseeSur(CarteAction c) {
         return this.getCouleur() == c.getCouleur();
     }
 
-    public boolean peutEtrePoseeSur(Plus2 c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Plus4 c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(Joker c) {
-        return this.getCouleur() == c.getCouleur();
-    }
-
-    public boolean peutEtrePoseeSur(ChangementDeSens c) {
+    public boolean peutEtrePoseeSur(CarteSpeciale c) {
         return this.getCouleur() == c.getCouleur();
     }
 }

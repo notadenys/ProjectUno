@@ -2,6 +2,8 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
+
+/**Plus4, Joker*/
 public abstract class CarteSpeciale extends Carte{
     public CarteSpeciale(Uno uno){
         super(uno, 50);
@@ -9,30 +11,18 @@ public abstract class CarteSpeciale extends Carte{
 
 
     public boolean peutEtreRecouvertePar(Carte c) {
-        return false;
+        return c.peutEtrePoseeSur(this);
     }
 
     public boolean peutEtrePoseeSur(Chiffre c) {
         return true;
     }
 
-    public boolean peutEtrePoseeSur(Plus4 c) {
-        return false;
-    }
-
-    public boolean peutEtrePoseeSur(Plus2 c) {
+    public boolean peutEtrePoseeSur(CarteAction c) {
         return true;
     }
 
-    public boolean peutEtrePoseeSur(Joker c) {
-        return false;
-    }
-
-    public boolean peutEtrePoseeSur(PasseTonTour c) {
-        return true;
-    }
-
-    public boolean peutEtrePoseeSur(ChangementDeSens c) {
+    public boolean peutEtrePoseeSur(CarteSpeciale c) {
         return true;
     }
 }
