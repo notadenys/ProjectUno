@@ -14,7 +14,7 @@ public abstract class Carte {
     }
     
     public Carte(Uno uno, int valeur, Couleur couleur) {
-        assert valeur > 0 : "Valeur est non valable";
+        assert valeur >= 0 : "Valeur est non valable";
         this.valeur = valeur;
         assert couleur != null : "Couleur est null";
         this.couleur = couleur;
@@ -22,7 +22,7 @@ public abstract class Carte {
 
 
     public void setValeur(int valeur) {
-        assert valeur > 0 : "Valeur est non valable";
+        assert valeur >= 0 : "Valeur est non valable";
         this.valeur = valeur;
     }
 
@@ -37,6 +37,7 @@ public abstract class Carte {
     }
 
     public String toString() {
+        assert !estSansCouleur() : "carte c est sans couleur";
         return getNom()+" {" +
                 "valeur=" + valeur +
                 ", couleur=" + couleur +
@@ -48,6 +49,7 @@ public abstract class Carte {
         return couleur == null;
     }
     public boolean estDeCouleurCompatibleAvec(Carte c){
+        assert !c.estSansCouleur() : "carte c est sans couleur";
         return c.couleur == couleur;
     }
 

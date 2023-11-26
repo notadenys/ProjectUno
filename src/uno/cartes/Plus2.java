@@ -9,6 +9,6 @@ public class Plus2 extends CarteAction {
     }
 
     public String getNom() {
-        return "Plus 2";
+        return "Plus2";
     }
 }

@@ -2,9 +2,8 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
-public class Chiffre extends Carte{
-    public Chiffre(Uno uno, int valeur, Couleur couleur)
-    {
+public class Chiffre extends Carte {
+    public Chiffre(Uno uno, int valeur, Couleur couleur) {
         super(uno, valeur, couleur);
     }
 
@@ -14,18 +13,18 @@ public class Chiffre extends Carte{
     }
 
     public boolean peutEtreRecouvertePar(Carte c) {
-        return false;
+        return c.peutEtrePoseeSur(this);
     }
 
     public boolean peutEtrePoseeSur(Chiffre c) {
-        return this.getValeur() == c.getValeur() || this.getCouleur() == c.getCouleur();
+        return this.getValeur() == c.getValeur() || this.estDeCouleurCompatibleAvec(c);
     }
 
     public boolean peutEtrePoseeSur(CarteSpeciale c) {
-        return this.getCouleur() == c.getCouleur();
+        return this.estDeCouleurCompatibleAvec(c);
     }
 
     public boolean peutEtrePoseeSur(CarteAction c) {
-        return this.getCouleur() == c.getCouleur();
+        return this.estDeCouleurCompatibleAvec(c);
     }
 }

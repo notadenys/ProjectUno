@@ -10,18 +10,18 @@ public abstract class CarteAction extends Carte {
     }
 
     public boolean peutEtreRecouvertePar(Carte c) {
-        return false;
+        return c.peutEtrePoseeSur(this);
     }
 
     public boolean peutEtrePoseeSur(Chiffre c) {
-        return this.getCouleur() == c.getCouleur();
+        return this.estDeCouleurCompatibleAvec(c);
     }
 
     public boolean peutEtrePoseeSur(CarteAction c) {
-        return this.getCouleur() == c.getCouleur();
+        return this.estDeCouleurCompatibleAvec(c);
     }
 
     public boolean peutEtrePoseeSur(CarteSpeciale c) {
-        return this.getCouleur() == c.getCouleur();
+        return this.estDeCouleurCompatibleAvec(c);
     }
 }

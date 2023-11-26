@@ -8,6 +8,6 @@ public class Plus4 extends CarteSpeciale {
     }
 
     public String getNom() {
-        return "Plus 4";
+        return "Plus4";
     }
 }
