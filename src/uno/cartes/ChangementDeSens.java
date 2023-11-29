@@ -9,6 +9,6 @@ public class ChangementDeSens extends CarteAction {
     }
 
     public String getNom() {
-        return "Changement De Sens";
+        return "ChangementDeSens";
     }
 }

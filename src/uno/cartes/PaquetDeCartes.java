@@ -1,6 +1,11 @@
 package uno.cartes;
 
+import uno.ErreurFichier;
+import uno.jeu.Uno;
+
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -15,10 +20,7 @@ public class PaquetDeCartes
 
     public void ajouter(Carte... cartes)
     {
-        for (Carte carte : cartes)
-        {
-            pdc.add(carte);
-        }
+        pdc.addAll(Arrays.asList(cartes));
     }
 
     public void ajouter(PaquetDeCartes pdc)
@@ -93,5 +95,63 @@ public class PaquetDeCartes
         {
             pdc.add(getNombreDeCartes()-i, piocher());
         }
+    }
+
+    public void ecrire(String nomDeFichier) throws ErreurFichier
+    {
+        try {
+
+            FileWriter flot = new FileWriter(nomDeFichier) ;
+            BufferedWriter flotFiltre = new BufferedWriter(flot) ;
+            for(Carte c : pdc)
+            {
+                flotFiltre.write(c.getNom() + " " + c.getValeur() + " " + c.getCouleur());
+                flotFiltre.newLine() ;
+            }
+            flotFiltre.close() ;
+            if (!(new File(nomDeFichier).isFile()))
+            {
+                throw new ErreurFichier("Error happened while creating the file");
+            }
+        } catch (IOException e) {System.out.println(e.getMessage());}
+    }
+
+    public void lire(String nomDeFichier) throws ErreurFichier
+    {
+        try (BufferedReader reader = new BufferedReader(new FileReader(nomDeFichier))){
+            String line;
+            Uno uno = new Uno();
+            while ((line = reader.readLine()) != null) {
+                String[] words = line.split(" ");
+                String nom = words[0];
+                int valeur = Integer.parseInt(words[1]);
+                String couleur = words[2];
+
+                switch (nom)
+                {
+                    case "Chiffre":
+                        ajouter(new Chiffre(uno, valeur, Couleur.valueOf(couleur.toUpperCase())));
+                        break;
+                    case "Plus2":
+                        ajouter(new Plus2(uno, Couleur.valueOf(couleur.toUpperCase())));
+                        break;
+                    case "ChangementDeSens":
+                        ajouter(new ChangementDeSens(uno, Couleur.valueOf(couleur.toUpperCase())));
+                        break;
+                    case "PasseTonTour":
+                        ajouter(new PasseTonTour(uno, Couleur.valueOf(couleur.toUpperCase())));
+                        break;
+                    case "Joker":
+                        ajouter(new Joker(uno));
+                        break;
+                    case "Plus4":
+                        ajouter(new Plus4(uno));
+                        break;
+                }
+                if (!(new File(nomDeFichier).isFile())) {
+                    throw new ErreurFichier("Error happened while creating the file");
+                }
+            }
+        } catch (IOException e) {System.out.println(e.getMessage());}
     }
 }

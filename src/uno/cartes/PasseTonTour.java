@@ -9,6 +9,6 @@ public class PasseTonTour extends CarteAction {
     }
 
     public String getNom() {
-        return "Passe Ton Tour";
+        return "PasseTonTour";
     }
 }
