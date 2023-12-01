@@ -6,16 +6,22 @@ import uno.jeu.Uno;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Random;
 
 
-public class PaquetDeCartes
+public class PaquetDeCartes implements Iterable<Carte>
 {
     private ArrayList<Carte> pdc;
 
     public PaquetDeCartes()
     {
         pdc = new ArrayList<Carte>();
+    }
+
+    public Iterator<Carte> iterator()
+    {
+        return pdc.iterator();
     }
 
     public void ajouter(Carte... cartes)

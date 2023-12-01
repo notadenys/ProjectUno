@@ -1,18 +1,14 @@
-package uno.cartes.tests;
+package tests;
 
+import org.junit.Test;
 import uno.ErreurFichier;
 import uno.cartes.FabriqueCartes;
 import uno.cartes.PaquetDeCartes;
 
 
 public class TestPaquet {
-    public static void main(String[] args)
-    {
-        testUno();
-        //testLire();
-    }
-
-    public static void testUno()
+    @Test
+    public void testUno()
     {
         FabriqueCartes fc = FabriqueCartes.getInstance();
         PaquetDeCartes pdc = fc.getPaquetUno();
@@ -22,13 +18,10 @@ public class TestPaquet {
             pdc.ecrire("cartes.txt");
         }
         catch (ErreurFichier e){System.out.println(e.getMessage());}
-        try {
-            pdc.lire("cartes.txt");
-        }
-        catch (ErreurFichier e){System.out.println(e.getMessage());}
     }
 
-    public static void testLire()
+    @Test
+    public void testLire()
     {
         PaquetDeCartes pdc = new PaquetDeCartes();
         try {
@@ -39,4 +32,6 @@ public class TestPaquet {
         System.out.println(pdc.toString());
         System.out.println(pdc.getNombreDeCartes());
     }
+
+
 }

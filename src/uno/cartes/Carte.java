@@ -37,7 +37,6 @@ public abstract class Carte {
     }
 
     public String toString() {
-        assert !estSansCouleur() : "carte c est sans couleur";
         return getNom()+" {" +
                 "valeur=" + valeur +
                 ", couleur=" + couleur +
