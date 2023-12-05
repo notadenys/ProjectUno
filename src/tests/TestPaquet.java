@@ -2,8 +2,10 @@ package tests;
 
 import org.junit.Test;
 import uno.ErreurFichier;
-import uno.cartes.FabriqueCartes;
-import uno.cartes.PaquetDeCartes;
+import uno.cartes.*;
+import uno.jeu.Uno;
+
+import java.sql.SQLOutput;
 
 
 public class TestPaquet {
@@ -33,5 +35,15 @@ public class TestPaquet {
         System.out.println(pdc.getNombreDeCartes());
     }
 
-
+    @Test
+    public void testIterator()
+    {
+        PaquetDeCartes pdc = new PaquetDeCartes();
+        Uno uno = new Uno();
+        pdc.ajouter(new Joker(uno), new Plus4(uno));
+        for (Carte c : pdc)
+        {
+            System.out.println(c.toString());
+        }
+    }
 }
