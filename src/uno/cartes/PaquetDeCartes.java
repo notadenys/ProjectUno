@@ -4,10 +4,7 @@ import uno.ErreurFichier;
 import uno.jeu.Uno;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
 
 public class PaquetDeCartes implements Iterable<Carte>
@@ -78,11 +75,7 @@ public class PaquetDeCartes implements Iterable<Carte>
 
     public void melanger()
     {
-        Random gen = new Random();
-        for (int i = 0; i < getNombreDeCartes(); i++)
-        {
-            pdc.add(gen.nextInt(getNombreDeCartes()), piocher());
-        }
+        Collections.shuffle(pdc);
     }
 
     public int getValeur()
