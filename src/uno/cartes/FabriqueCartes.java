@@ -36,4 +36,10 @@ public class FabriqueCartes {
         }
         return pdc;
     }
+
+    public PaquetDeCartes getPaquetVide()
+    {
+        PaquetDeCartes pdc = new PaquetDeCartes();
+        return pdc;
+    }
 }
