@@ -2,6 +2,8 @@ package uno.cartes;
 
 import uno.jeu.Uno;
 
+import java.util.Random;
+
 public abstract class Carte {
 
     private int valeur;
@@ -31,6 +33,27 @@ public abstract class Carte {
         this.couleur = couleur;
     }
 
+    public void setRandomColeur()
+    {
+        int c = new Random().nextInt(4);
+        switch (c)
+        {
+            case 0:
+                setCouleur(Couleur.BLEU);
+                break;
+            case 1:
+                setCouleur(Couleur.JAUNE);
+                break;
+            case 2:
+                setCouleur(Couleur.ROUGE);
+                break;
+            case 3:
+                setCouleur(Couleur.VERT);
+                break;
+        }
+
+    }
+
     public int getValeur(){return valeur;}
     public Couleur getCouleur() {
         return couleur;
@@ -47,7 +70,7 @@ public abstract class Carte {
     public boolean estSansCouleur() {
         return couleur == null;
     }
-    public boolean estDeCouleurCompatibleAvec(Carte c){
+    public boolean estDeCouleurCompatibleAvec(Carte c) {
         assert !c.estSansCouleur() : "carte c est sans couleur";
         return c.couleur == couleur;
     }
