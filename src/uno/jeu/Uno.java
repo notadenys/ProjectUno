@@ -31,10 +31,10 @@ public class Uno {
     {
         assert nbBots >= 1 : "Pas de bots";
         joueurs = new ArrayList<Joueur>(nbBots + 1);
-        joueurs.add(new JoueurHumain("xx"));
+        joueurs.add(new JoueurHumain(this, "xx"));
         for (int i = 0; i < nbBots; i++)
         {
-            joueurs.add(new Bot("Bot " + (i + 1)));
+            joueurs.add(new Bot(this, "Bot " + (i + 1)));
         }
     }
 
@@ -47,6 +47,10 @@ public class Uno {
     {
         return joueurQuiDistribue;
     }
+
+    PaquetDeCartes getTalon() {return talon;}
+    PaquetDeCartes getPioche() { return pioche;}
+
 
     public void choisirQuiDistribue() {
         joueurQuiDistribue = (int)(Math.random() * getNbJoueurs());
