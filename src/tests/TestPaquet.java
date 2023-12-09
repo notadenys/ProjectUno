@@ -1,11 +1,9 @@
 package tests;
 
 import org.junit.Test;
-import uno.ErreurFichier;
+import uno.Erreurs.ErreurFichier;
 import uno.cartes.*;
 import uno.jeu.Uno;
-
-import java.sql.SQLOutput;
 
 
 public class TestPaquet {
@@ -14,7 +12,7 @@ public class TestPaquet {
     {
         FabriqueCartes fc = FabriqueCartes.getInstance();
         PaquetDeCartes pdc = fc.getPaquetUno();
-        System.out.println(pdc.toString());
+        System.out.println(pdc);
         System.out.println(pdc.getNombreDeCartes());
         try {
             pdc.ecrire("cartes.txt");
@@ -31,7 +29,7 @@ public class TestPaquet {
         }
         catch (ErreurFichier e){System.out.println(e.getMessage());}
 
-        System.out.println(pdc.toString());
+        System.out.println(pdc);
         System.out.println(pdc.getNombreDeCartes());
     }
 
@@ -44,6 +42,17 @@ public class TestPaquet {
         for (Carte c : pdc)
         {
             System.out.println(c.toString());
+        }
+    }
+
+    @Test
+    public void testGetRandomCouleur()
+    {
+        Joker j = new Joker(new Uno());
+        for (int i = 0; i < 10; i++)
+        {
+            j.setRandomColeur();
+            System.out.println(j);
         }
     }
 }
