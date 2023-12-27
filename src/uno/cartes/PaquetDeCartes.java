@@ -57,7 +57,8 @@ public class PaquetDeCartes implements Iterable<Carte>
 
     public void enlever(Carte carte)
     {
-        assert pdc.remove(carte) : "Cette carte n'est pas dans le paquet";
+        assert pdc.contains(carte) : "Cette carte n'est pas dans le paquet";
+        pdc.remove(carte);
     }
 
     public Carte getSommet()
