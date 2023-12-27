@@ -12,6 +12,9 @@ public class Chiffre extends Carte {
         return "Chiffre";
     }
 
+    @Override
+    public String getAffichage() {return getNom() + " " + getValeur() + " " + getCouleur();}
+
     public boolean peutEtreRecouvertePar(Carte c) {
         return c.peutEtrePoseeSur(this);
     }

@@ -66,6 +66,11 @@ public abstract class Carte {
                 '}';
     }
 
+    /**
+     * @return nom et couleur de la carte (si Chiffre on redefinit pour afficher la valeur aussi)
+     */
+    public String getAffichage() {return getNom() + " " + getCouleur();}
+
 
     public boolean estSansCouleur() {
         return couleur == null;
