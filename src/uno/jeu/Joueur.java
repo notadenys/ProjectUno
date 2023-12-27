@@ -22,11 +22,18 @@ public abstract class Joueur {
         return main;
     }
 
-    String getNom()
+    public String getNom()
     {
         return nom;
     }
-    Uno getUno() {return uno;}
+    public Uno getUno() {return uno;}
+
+    public boolean aMainVide() {return main.estVide();}
+
+    public void afficherRes()
+    {
+        System.out.println(getNom() + " : " + getMain().getValeur());
+    }
 
     abstract void jouer();
 }

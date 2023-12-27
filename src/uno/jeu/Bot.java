@@ -23,6 +23,8 @@ public class Bot extends Joueur{
                     carte.setRandomColeur();
                 }
                 getUno().getTalon().ajouter(carte);
+
+                System.out.println("Le joueur " + this.getNom() + " a joue : " + carte.getAffichage());
                 getMain().enlever(carte);
                 return;  // quit the function
             }
@@ -36,6 +38,7 @@ public class Bot extends Joueur{
             {
                 getMain().getSommet().setRandomColeur();
             }
+            System.out.println("Le joueur " + this.getNom() + " a joue : " + getMain().getSommet().getAffichage());
             getUno().getTalon().ajouter(getMain().piocher());
         }
     }
