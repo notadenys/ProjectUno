@@ -33,6 +33,31 @@ public abstract class Carte {
         this.couleur = couleur;
     }
 
+    public void choisirCouleur(char col) throws IllegalArgumentException
+    {
+        switch (col)
+        {
+            case 'r':
+                setCouleur(Couleur.ROUGE);
+                break;
+
+            case 'b':
+                setCouleur(Couleur.BLEU);
+                break;
+
+            case 'v':
+                setCouleur(Couleur.VERT);
+                break;
+
+            case 'j':
+                setCouleur(Couleur.JAUNE);
+                break;
+
+            default:
+                throw new IllegalArgumentException("Invalid character");
+        }
+    }
+
     public void setRandomColeur()
     {
         int c = new Random().nextInt(4);
