@@ -55,10 +55,27 @@ public class PaquetDeCartes implements Iterable<Carte>
         return sb.toString();
     }
 
+    public String getAffichage()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Paquet :");
+        for (int i = 0; i < pdc.size(); i++)
+        {
+            sb.append(System.lineSeparator()).append(i+1).append(") ").append(pdc.get(i).getAffichage());
+        }
+        return sb.toString();
+    }
+
     public void enlever(Carte carte)
     {
         assert pdc.contains(carte) : "Cette carte n'est pas dans le paquet";
         pdc.remove(carte);
+    }
+
+    public void mettreSurTop(Carte carte)
+    {
+        enlever(carte);
+        ajouter(carte);
     }
 
     public Carte getSommet()
@@ -96,10 +113,7 @@ public class PaquetDeCartes implements Iterable<Carte>
 
     public void retourner()
     {
-        for (int i = getNombreDeCartes(); i > 0; i--)
-        {
-            pdc.add(getNombreDeCartes()-i, piocher());
-        }
+        Collections.reverse(pdc);
     }
 
     public void ecrire(String nomDeFichier) throws ErreurFichier
