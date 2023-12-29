@@ -12,5 +12,5 @@ public class Joker extends CarteSpeciale {
     }
 
     public boolean estSansEffet(){return true;}
-    public void appliquerEffet(){}
+    public void appliquerEffet(){if(estSansCouleur()) setRandomColeur();}
 }
