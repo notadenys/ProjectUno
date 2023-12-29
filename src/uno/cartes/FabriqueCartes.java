@@ -9,10 +9,9 @@ public class FabriqueCartes {
 
     private FabriqueCartes(){}
 
-    public PaquetDeCartes getPaquetUno()
+    public PaquetDeCartes getPaquetUno(Uno uno)
     {
         PaquetDeCartes pdc = new PaquetDeCartes();
-        Uno uno = new Uno();
         for (Couleur col : Couleur.values())
         {
             pdc.ajouter(new Chiffre(uno, 0, col));

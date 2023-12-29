@@ -13,7 +13,7 @@ public class PaquetDeCartes implements Iterable<Carte>
 
     public PaquetDeCartes()
     {
-        pdc = new ArrayList<Carte>();
+        pdc = new ArrayList<>();
     }
 
     public Iterator<Carte> iterator()
@@ -48,9 +48,9 @@ public class PaquetDeCartes implements Iterable<Carte>
     {
         StringBuilder sb = new StringBuilder();
         sb.append("Paquet :");
-        for (Carte carte : pdc)
+        for (int i = 0; i < pdc.size(); i++)
         {
-            sb.append(System.lineSeparator()).append(carte.toString());
+            sb.append(System.lineSeparator()).append(i+1).append(" ").append(pdc.get(i));
         }
         return sb.toString();
     }
@@ -64,6 +64,11 @@ public class PaquetDeCartes implements Iterable<Carte>
     public Carte getSommet()
     {
         return pdc.get(pdc.size() - 1);
+    }
+
+    public Carte getCarte(int index)
+    {
+        return pdc.get(index);
     }
 
     public Carte piocher()

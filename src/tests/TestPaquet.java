@@ -11,7 +11,8 @@ public class TestPaquet {
     public void testUno()
     {
         FabriqueCartes fc = FabriqueCartes.getInstance();
-        PaquetDeCartes pdc = fc.getPaquetUno();
+        Uno uno = new Uno();
+        PaquetDeCartes pdc = fc.getPaquetUno(uno);
         System.out.println(pdc);
         System.out.println(pdc.getNombreDeCartes());
         try {
