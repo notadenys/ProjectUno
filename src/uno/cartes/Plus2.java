@@ -11,4 +11,14 @@ public class Plus2 extends CarteAction {
     public String getNom() {
         return "Plus2";
     }
+
+    @Override
+    public void appliquerEffet() {
+        getUno().prochainJouer();
+
+        getUno().getJoueurCourant().piocher();
+        getUno().getJoueurCourant().piocher();
+
+        System.out.println(getUno().getNomDeJoueurCourant() + " prends 2 cartes et passes son tour");
+    }
 }

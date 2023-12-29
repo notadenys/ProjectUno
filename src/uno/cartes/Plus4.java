@@ -10,4 +10,18 @@ public class Plus4 extends CarteSpeciale {
     public String getNom() {
         return "Plus4";
     }
+
+    public boolean estSansEffet(){return false;}
+
+    @Override
+    public void appliquerEffet() {
+        getUno().prochainJouer();
+
+        getUno().getJoueurCourant().piocher();
+        getUno().getJoueurCourant().piocher();
+        getUno().getJoueurCourant().piocher();
+        getUno().getJoueurCourant().piocher();
+
+        System.out.println(getUno().getNomDeJoueurCourant() + " prends 4 cartes et passes son tour");
+    }
 }

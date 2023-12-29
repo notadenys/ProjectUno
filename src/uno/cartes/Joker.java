@@ -10,4 +10,7 @@ public class Joker extends CarteSpeciale {
     public String getNom() {
         return "Joker";
     }
+
+    public boolean estSansEffet(){return true;}
+    public void appliquerEffet(){}
 }

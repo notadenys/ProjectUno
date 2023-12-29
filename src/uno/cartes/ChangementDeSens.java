@@ -11,4 +11,11 @@ public class ChangementDeSens extends CarteAction {
     public String getNom() {
         return "ChangementDeSens";
     }
+
+    @Override
+    public void appliquerEffet() {
+        getUno().inverserSens();
+
+        System.out.println("Le sens est change!");
+    }
 }

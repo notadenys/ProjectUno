@@ -17,11 +17,9 @@ public abstract class CarteSpeciale extends Carte{
     public boolean peutEtrePoseeSur(Chiffre c) {
         return true;
     }
-
     public boolean peutEtrePoseeSur(CarteAction c) {
         return true;
     }
-
     public boolean peutEtrePoseeSur(CarteSpeciale c) {
         return true;
     }

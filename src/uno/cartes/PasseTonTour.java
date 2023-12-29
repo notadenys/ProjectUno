@@ -11,4 +11,9 @@ public class PasseTonTour extends CarteAction {
     public String getNom() {
         return "PasseTonTour";
     }
+
+    public void appliquerEffet() {
+        getUno().prochainJouer();
+        System.out.println(getUno().getNomDeJoueurCourant() + " passes son tour");
+    }
 }

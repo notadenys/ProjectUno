@@ -5,17 +5,19 @@ import uno.jeu.Uno;
 import java.util.Random;
 
 public abstract class Carte {
-
+    private Uno uno;
     private int valeur;
     private Couleur couleur;
 
 
     public Carte(Uno uno, int valeur) {
+        this.uno = uno;
         assert valeur > 0 : "Valeur est non valable";
         this.valeur = valeur;
     }
     
     public Carte(Uno uno, int valeur, Couleur couleur) {
+        this.uno = uno;
         assert valeur >= 0 : "Valeur est non valable";
         this.valeur = valeur;
         assert couleur != null : "Couleur est null";
@@ -80,10 +82,8 @@ public abstract class Carte {
     }
 
     public int getValeur(){return valeur;}
-    public Couleur getCouleur() {
-        return couleur;
-    }
-
+    public Couleur getCouleur() {return couleur;}
+    public Uno getUno(){return uno;}
     public String toString() {
         return getNom()+" {" +
                 "valeur=" + valeur +
@@ -95,7 +95,6 @@ public abstract class Carte {
      * @return nom et couleur de la carte (si Chiffre on redefinit pour afficher la valeur aussi)
      */
     public String getAffichage() {return getNom() + " " + getCouleur();}
-
 
     public boolean estSansCouleur() {
         return couleur == null;
@@ -110,4 +109,6 @@ public abstract class Carte {
     public abstract boolean peutEtrePoseeSur(Chiffre c);
     public abstract boolean peutEtrePoseeSur(CarteAction c);
     public abstract boolean peutEtrePoseeSur(CarteSpeciale c);
+    public abstract void appliquerEffet();
+    public abstract boolean estSansEffet();
 }
