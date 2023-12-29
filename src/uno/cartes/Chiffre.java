@@ -13,7 +13,7 @@ public class Chiffre extends Carte {
     }
 
     @Override
-    public String getAffichage() {return getNom() + " " + getValeur() + " " + getCouleur();}
+    public String getAffichage() {return getValeur() + " " + getCouleur();}
 
     public boolean peutEtreRecouvertePar(Carte c) {
         return c.peutEtrePoseeSur(this);
