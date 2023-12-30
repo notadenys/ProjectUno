@@ -1,6 +1,6 @@
 package src.jeu;
 
-import src.Erreurs.InvalidCoupExtension;
+import src.erreurs.InvalidCoupExtension;
 import src.cartes.Carte;
 import src.cartes.FabriqueCartes;
 import src.cartes.PaquetDeCartes;

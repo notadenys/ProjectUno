@@ -1,7 +1,7 @@
 package tests;
 
 import org.junit.Test;
-import src.Erreurs.ErreurFichier;
+import src.erreurs.ErreurFichier;
 import src.cartes.*;
 import src.jeu.Uno;
 

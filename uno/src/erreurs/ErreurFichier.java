@@ -1,4 +1,4 @@
-package src.Erreurs;
+package src.erreurs;
 
 public class ErreurFichier extends Exception {
     public ErreurFichier(String errorMessage) {

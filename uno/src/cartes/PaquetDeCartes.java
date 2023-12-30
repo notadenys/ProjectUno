@@ -1,6 +1,6 @@
 package src.cartes;
 
-import src.Erreurs.ErreurFichier;
+import src.erreurs.ErreurFichier;
 import src.jeu.Uno;
 
 import java.io.*;
