@@ -1,9 +1,9 @@
 package tests;
 
 import org.junit.Test;
-import uno.Erreurs.ErreurFichier;
-import uno.cartes.*;
-import uno.jeu.Uno;
+import src.Erreurs.ErreurFichier;
+import src.cartes.*;
+import src.jeu.Uno;
 
 
 public class TestPaquet {

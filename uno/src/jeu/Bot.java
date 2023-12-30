@@ -1,6 +1,6 @@
-package uno.jeu;
+package src.jeu;
 
-import uno.cartes.Carte;
+import src.cartes.Carte;
 
 public class Bot extends Joueur{
     public Bot(Uno uno, String nom)

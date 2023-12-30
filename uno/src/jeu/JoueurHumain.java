@@ -1,7 +1,7 @@
-package uno.jeu;
+package src.jeu;
 
-import uno.Erreurs.InvalidCoupExtension;
-import uno.cartes.Carte;
+import src.Erreurs.InvalidCoupExtension;
+import src.cartes.Carte;
 
 import java.util.Objects;
 import java.util.Scanner;

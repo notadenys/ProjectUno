@@ -1,8 +1,8 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import uno.cartes.*;
-import uno.jeu.Uno;
+import src.cartes.*;
+import src.jeu.Uno;
 
 import static org.junit.jupiter.api.Assertions.*;
 

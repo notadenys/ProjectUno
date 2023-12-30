@@ -1,6 +1,6 @@
-package uno.cartes;
+package src.cartes;
 
-import uno.jeu.Uno;
+import src.jeu.Uno;
 
 public class Plus2 extends CarteAction {
     public Plus2(Uno uno, Couleur couleur)

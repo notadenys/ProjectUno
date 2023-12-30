@@ -1,6 +1,6 @@
-package uno.cartes;
+package src.cartes;
 
-import uno.jeu.Uno;
+import src.jeu.Uno;
 
 public class Joker extends CarteSpeciale {
     public Joker(Uno uno){

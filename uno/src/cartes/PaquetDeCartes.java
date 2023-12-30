@@ -1,7 +1,7 @@
-package uno.cartes;
+package src.cartes;
 
-import uno.Erreurs.ErreurFichier;
-import uno.jeu.Uno;
+import src.Erreurs.ErreurFichier;
+import src.jeu.Uno;
 
 import java.io.*;
 import java.util.*;

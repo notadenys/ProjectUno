@@ -1,4 +1,4 @@
-package uno.jeu;
+package src.jeu;
 
 // Dialogue ligne de commande
 public class DLC {

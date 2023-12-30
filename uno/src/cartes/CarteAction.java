@@ -1,6 +1,6 @@
-package uno.cartes;
+package src.cartes;
 
-import uno.jeu.Uno;
+import src.jeu.Uno;
 
 /**PasseTonTour, Plus2, ChangementDeSens*/
 public abstract class CarteAction extends Carte {

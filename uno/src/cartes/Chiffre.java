@@ -1,6 +1,6 @@
-package uno.cartes;
+package src.cartes;
 
-import uno.jeu.Uno;
+import src.jeu.Uno;
 
 public class Chiffre extends Carte {
     public Chiffre(Uno uno, int valeur, Couleur couleur) {

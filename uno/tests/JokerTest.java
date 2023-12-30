@@ -1,11 +1,11 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import uno.cartes.ChangementDeSens;
-import uno.cartes.Chiffre;
-import uno.cartes.Joker;
-import uno.cartes.Couleur;
-import uno.jeu.Uno;
+import src.cartes.ChangementDeSens;
+import src.cartes.Chiffre;
+import src.cartes.Joker;
+import src.cartes.Couleur;
+import src.jeu.Uno;
 
 import static org.junit.jupiter.api.Assertions.*;
 

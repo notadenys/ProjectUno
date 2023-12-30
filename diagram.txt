@@ -15,12 +15,12 @@ enum Couleur {
 }
 
 abstract class Carte {
-    - uno: Uno
+    - src: Uno
     - valeur: int
     - couleur: Couleur
 
-    + Carte(uno: Uno, valeur: int)
-    + Carte(uno: Uno, valeur: int, couleur: Couleur)
+    + Carte(src: Uno, valeur: int)
+    + Carte(src: Uno, valeur: int, couleur: Couleur)
     + setValeur(valeur: int): void
     + setCouleur(couleur: Couleur): void
     + choisirCouleur(col: char): void
@@ -41,7 +41,7 @@ abstract class Carte {
     + abstract estSansEffet(): boolean
 }
 class Chiffre extends Carte {
-  + Chiffre(Uno uno, int valeur, Couleur couleur)
+  + Chiffre(Uno src, int valeur, Couleur couleur)
 
   + getNom(): String
   + peutEtreRecouvertePar(Carte c): boolean
@@ -51,7 +51,7 @@ class Chiffre extends Carte {
 }
 
 abstract class CarteAction extends Carte {
-  + CarteAction(Uno uno, Couleur couleur)
+  + CarteAction(Uno src, Couleur couleur)
 
   + peutEtreRecouvertePar(Carte c): boolean
   + peutEtrePoseeSur(Chiffre c): boolean
@@ -60,7 +60,7 @@ abstract class CarteAction extends Carte {
 }
 
 abstract class CarteSpeciale extends Carte {
-  + CarteSpeciale(Uno uno, Couleur couleur)
+  + CarteSpeciale(Uno src, Couleur couleur)
 
   + peutEtreRecouvertePar(Carte c): boolean
   + peutEtrePoseeSur(Chiffre c): boolean
@@ -69,31 +69,31 @@ abstract class CarteSpeciale extends Carte {
 }
 
 class ChangementDeSens extends CarteAction {
-  + ChangementDeSens(Uno uno, Couleur couleur)
+  + ChangementDeSens(Uno src, Couleur couleur)
 
   + getNom(): String
 }
 
 class Plus2 extends CarteAction {
-  + Plus2(Uno uno, Couleur couleur)
+  + Plus2(Uno src, Couleur couleur)
 
   + getNom(): String
 }
 
 class PasseTonTour extends CarteAction {
-  + PasseTonTour(Uno uno, Couleur couleur)
+  + PasseTonTour(Uno src, Couleur couleur)
 
   + getNom(): String
 }
 
 class Joker extends CarteSpeciale {
-  + Joker(Uno uno, Couleur couleur)
+  + Joker(Uno src, Couleur couleur)
 
   + getNom(): String
 }
 
 class Plus4 extends CarteSpeciale {
-  + Plus4(Uno uno, Couleur couleur)
+  + Plus4(Uno src, Couleur couleur)
 
   + getNom(): String
 }
@@ -169,7 +169,7 @@ class Uno {
 }
 
 class DLC {
-    - uno: Uno
+    - src: Uno
 
     + DLC(u: Uno)
     + reagir(): void
@@ -180,9 +180,9 @@ abstract class Joueur {
     - nom: String
     - totalScore: int
     - main: PaquetDeCartes
-    - uno: Uno
+    - src: Uno
 
-    + Joueur(uno: Uno, nom: String)
+    + Joueur(src: Uno, nom: String)
     + updateTotalScore(): void
     + piocher(): void
     + getMain(): PaquetDeCartes
@@ -195,14 +195,14 @@ abstract class Joueur {
 }
 
 class JoueurHumain extends Joueur {
-    + JoueurHumain(uno: Uno, nom: String)
+    + JoueurHumain(src: Uno, nom: String)
     + jouer(): void
     - piocherCarte(): void
     - jouerCarte(): void
 }
 
 class Bot extends Joueur {
-    + Bot(uno: Uno, nom: String)
+    + Bot(src: Uno, nom: String)
     + jouer(): void
 }
 

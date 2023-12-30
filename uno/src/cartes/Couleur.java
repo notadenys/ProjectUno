@@ -1,4 +1,4 @@
-package uno.cartes;
+package src.cartes;
 
 
 public enum Couleur {

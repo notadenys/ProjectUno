@@ -1,4 +1,4 @@
-package uno.jeu;
+package src.jeu;
 
 public class Jeu {
     public static void main(String[] args) {

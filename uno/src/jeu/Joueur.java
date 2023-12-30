@@ -1,9 +1,9 @@
-package uno.jeu;
+package src.jeu;
 
-import uno.Erreurs.InvalidCoupExtension;
-import uno.cartes.Carte;
-import uno.cartes.FabriqueCartes;
-import uno.cartes.PaquetDeCartes;
+import src.Erreurs.InvalidCoupExtension;
+import src.cartes.Carte;
+import src.cartes.FabriqueCartes;
+import src.cartes.PaquetDeCartes;
 
 public abstract class Joueur {
     private String nom;
