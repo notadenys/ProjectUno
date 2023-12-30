@@ -9,7 +9,7 @@ public enum Couleur {
 
     private String nom;
 
-    private Couleur(String nom)
+    Couleur(String nom)
     {
         assert nom != null : "Nom est vide";
         this.nom = nom;

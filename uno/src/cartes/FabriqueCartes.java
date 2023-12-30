@@ -38,7 +38,6 @@ public class FabriqueCartes {
 
     public PaquetDeCartes getPaquetVide()
     {
-        PaquetDeCartes pdc = new PaquetDeCartes();
-        return pdc;
+        return new PaquetDeCartes();
     }
 }

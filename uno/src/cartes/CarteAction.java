@@ -22,6 +22,4 @@ public abstract class CarteAction extends Carte {
     public boolean peutEtrePoseeSur(CarteSpeciale c) {
         return this.estDeCouleurCompatibleAvec(c);
     }
-
-    public boolean estSansEffet(){return false;}
 }

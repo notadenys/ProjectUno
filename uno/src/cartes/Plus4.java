@@ -11,8 +11,6 @@ public class Plus4 extends CarteSpeciale {
         return "Plus4";
     }
 
-    public boolean estSansEffet(){return false;}
-
     @Override
     public void appliquerEffet() {
         getUno().prochainJouer();

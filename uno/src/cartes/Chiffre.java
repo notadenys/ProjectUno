@@ -27,6 +27,5 @@ public class Chiffre extends Carte {
         return this.estDeCouleurCompatibleAvec(c);
     }
 
-    public boolean estSansEffet(){return true;}
     public void appliquerEffet(){}
 }

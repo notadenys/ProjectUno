@@ -110,5 +110,4 @@ public abstract class Carte {
     public abstract boolean peutEtrePoseeSur(CarteAction c);
     public abstract boolean peutEtrePoseeSur(CarteSpeciale c);
     public abstract void appliquerEffet();
-    public abstract boolean estSansEffet();
 }
