@@ -21,7 +21,12 @@ public class Uno {
     private PaquetDeCartes talon;
     private PaquetDeCartes pioche;
 
-    public Uno(){}
+    public Uno()
+    {
+        sens = true;
+        fin = false;
+        finJeu = false;
+    }
 
     public void jouer()
     {
@@ -37,10 +42,6 @@ public class Uno {
 
     public void initialiser(int nbBots)
     {
-        sens = true;
-        fin = false;
-        finJeu = false;
-
         creerLesJoueurs(nbBots);
         choisirQuiDistribue();
         choisirQuiJoue();
@@ -49,6 +50,10 @@ public class Uno {
         dlc.reagir();
     }
 
+    /**
+     * creates players
+     * @param nbBots amount of bots
+     */
     public void creerLesJoueurs(int nbBots)
     {
         assert nbBots >= 1 : "Pas de bots";
@@ -86,8 +91,11 @@ public class Uno {
     }
 
     public int getNbJoueurs() {return joueurs.size();}
+    public boolean getSens() {return sens;}
     public int getJoueurQuiDistribue(){return joueurQuiDistribue;}
     public Joueur getJoueurCourant(){return joueurs.get(joueurQuiJoue);}
+    public int getJoueurQuiJoue(){return joueurQuiJoue;}
+    public Joueur getJoueur(int index){return joueurs.get(index);}
     public String getNomDeJoueurCourant(){return getJoueurCourant().getNom();}
 
     public ArrayList<Joueur> getJoueurs() {return joueurs;}
@@ -125,6 +133,7 @@ public class Uno {
 
     public void setDLC(DLC d) {this.dlc = d;}
     public void setFin(boolean b) {this.fin = b;}
+    public void setJoueurQuiDistribue(int index) {joueurQuiDistribue = index;}
 
     public void inverserSens(){sens = !sens;}
 
